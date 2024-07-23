@@ -1,0 +1,16 @@
+/**
+ * Route Map
+ * Header
+ *  - Logo
+ *  - nav-items
+ * Content Area
+ *  -SearchBar
+ *  -ClearAll
+ *  -RestaurantsNames(card)
+ *      - Cuisines
+ *      - Rating
+ *      -Delivery Time
+ *      -Location
+ * Footer
+ *  -copy rights
+ */
