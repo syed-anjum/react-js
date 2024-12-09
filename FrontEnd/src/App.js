@@ -5,12 +5,17 @@ import Body from "./components/Body"
 import {createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
 import Help from "./components/Help";
 import About from "./components/About";
+import Menu from "./components/Menu";
+import { CartProvider } from "./ShoppingCartContext";
+import Cart from "./Cart";
 
 const AppLayOut = () => {
     return (
         <div className="main">
-            <Header />
-            <Outlet />
+            <CartProvider>
+                <Header />
+                <Outlet />
+            </CartProvider> 
         </div>
     );
 }
@@ -35,6 +40,14 @@ const AppRouter = createBrowserRouter([
             {
                 path:"/support",
                 element:<Help />,
+            },
+            {
+                path:"/menu/:id",
+                element:<Menu/>
+            },
+            {
+                path:"/cart",
+                element:<Cart/>
             }
         ],
     },

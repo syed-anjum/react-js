@@ -1,12 +1,16 @@
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 //Header Component
 const Header = () => {
+    const onlineSatus = useOnlineStatus();
     return (
         <div className="header">
             <img className="logo-image" src={LOGO_URL}/>
             <div className="nav-items">
                 <ul>
+                    <li>OnlineStatus</li>
+                    <li className={onlineSatus ? 'online' : 'offline'}></li>
                     <li className="home">
                        <Link to="/home" >Home</Link>
                     </li>
@@ -16,7 +20,9 @@ const Header = () => {
                     <li className="help">
                         <Link to="/support" >Help</Link>
                     </li>
-                    <li className="cart">Cart</li>
+                    <li className="help">
+                        <Link to="/cart" >Cart</Link>
+                    </li>
                 </ul>
             </div>
         </div>
